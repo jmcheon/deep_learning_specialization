@@ -53,11 +53,11 @@
 ### Logistic Regression Cost Function
 $y^{(i)} = \sigma(w^Tx^{(i)} + b)$, where $\sigma(z) = \frac{1}{1 + e^{-z^{(i)}}}$, $z^{(i)} =w^Tx^{(i)} + b$
 
-Given {$(x^{(1)}, y^{(1)}),\dots,(x^{(m)}, y^{(m)})$}, want $\hat y^{(i)} \approx y^{(i)}$
+Given { $(x^{(1)}, y^{(1)}),\dots,(x^{(m)}, y^{(m)})$ }, want $\hat y^{(i)} \approx y^{(i)}$
 
 Loss(error) function: $$L(\hat y, y) = -(y \log(\hat y) + (1-y)\log(1-\hat y))$$
 
-Cost function:$$J(w,b) = \frac{1}{m} \sum^m_{i=0} L(\hat y^{(i)}, y^{(i)} ) = -\frac{1}{m} \sum^m_{i=0}[(y^{(i)} \log(\hat y^{(i)}) + (1-y^{(i)})\log(1-\hat y^{(i)}))]$$
+Cost function: $$J(w,b) = \frac{1}{m} \sum^m_{i=0} L(\hat y^{(i)}, y^{(i)} ) = -\frac{1}{m} \sum^m_{i=0}[(y^{(i)} \log(\hat y^{(i)}) + (1-y^{(i)})\log(1-\hat y^{(i)}))]$$
 
 #### keywords:
 - convex, non-convex
