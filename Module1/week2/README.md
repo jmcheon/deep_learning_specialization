@@ -5,6 +5,8 @@
 	- [Binary Classification](#binary-classification)
 	- [Logistic Regression](#logistic-regression)
 	- [Logistic Regression Cost Function](#logistic-regression-cost-function)
+	- [Gradient Descent](#gradient-descent)
+	- [Logistic Regression Gradient Descent](#logistic-regression-gradient-descent)
 
 ## 1. Logistic Regression as a Neural Network
 ### Binary Classification
@@ -76,3 +78,67 @@ Cost function: $$J(w,b) = \frac{1}{m} \sum^m_{i=0} L(\hat y^{(i)}, y^{(i)} ) = -
 	- : to measure how well the algorithm is doing/ how good the output $\hat y$ is when the true label is $y$
 - what is the training procedure and what is loss function for?
 - what does it mean finding parameters $W$ and $b$ that minimize the overall cost function $J$?
+
+### Gradient Descent
+repeat: $$w := w - \alpha \frac{\partial J(w, b)}{\partial w} $$
+ $$b := b - \alpha \frac{\partial J(w, b)}{\partial b}$$
+ $\alpha$ : learning rate
+  $\frac{df(w)}{dw}$ $\approx dw$ : derivative
+#### keywords:
+- learning rate
+- gradient descent
+- local optima, global optima
+- convergence
+
+#### keypoints:
+- initial values for parameters $W, b$ (initial step at the convex function to descent)
+- iterations of gradient descent
+
+#### questions:
+- why we don't usually initialize parameters randomly for logistic regression?
+- what is the role of learning rate ($\alpha$)?
+	- : it controls how big a step we take on each iteration during gradient descent
+- what is the definition of a derivative?
+	- : a slop of a function at a particular point
+- does a convex function always has multiple local optima?
+	- : false
+
+### Logistic Regression Gradient Descent
+$z =w^Tx + b$
+
+$\hat y = a = \sigma(z) = \frac{1}{1 + e^{-z}}$
+
+$L(a, y) = -(y \log(a) + (1-y)\log(1-a))$
+
+derivatives:
+
+$\frac{\partial L(a, y)}{\partial a} \approx da = -\frac{y}{a} + \frac{1-y}{1-a}$
+
+$\frac{\partial a}{\partial z} = a(1-a)$
+
+$\frac{\partial L}{\partial z} \approx dz = \frac{\partial L}{\partial a}  \frac{\partial a}{\partial z} = a-y$
+
+$\frac{\partial L}{\partial w_1} \approx dw_1 = x_1  \frac{\partial L}{\partial z} \approx x_1  dz$
+
+$\frac{\partial L}{\partial w_2} \approx dw_2 = x_2  \frac{\partial L}{\partial z} \approx x_2  dz$
+
+$\frac{\partial L}{\partial b} \approx db = \frac{\partial L}{\partial z} \approx dz$
+
+#### keywords:
+- forward functions, backward functions
+- chain rule
+
+#### keypoints:
+- forward propagation/pass: to compute the output of the neural network
+- left-to-right pass: to compute the value of $J$
+- backward propagation/pass: to compute the gradients, derivatives
+- right-to-left pass: to compute the derivatives
+- we want to optimize/minimize the cost function $J$
+- the way of computing derivatives
+
+#### questions:
+- what does it mean optimizing/minimizing the cost function?
+- one step of backward propagation on a computation graph yields derivatives of finial output variable
+	- : true
+- what does it mean propagating the change of a parameter to the output value?
+- what is chain rule when calculating derivatives?
