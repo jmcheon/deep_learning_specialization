@@ -109,7 +109,13 @@ $z =w^Tx + b$
 $\hat y = a = \sigma(z) = \frac{1}{1 + e^{-z}}$
 
 $L(a, y) = -(y \log(a) + (1-y)\log(1-a))$
-
+<div>
+<br><br>
+<img src="https://github.com/jmcheon/deep_learning_specialization/assets/40683323/2e67b6bc-2bcb-4af2-8060-e5aa389ad59e" alt="gradient descent example1">
+  <figcaption>Computation graph: two input features x1, x2</figcaption>
+<br><br>
+</div>
+  
 derivatives:
 
 $\frac{\partial L(a, y)}{\partial a} \approx da = -\frac{y}{a} + \frac{1-y}{1-a}$
