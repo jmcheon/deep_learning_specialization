@@ -1,18 +1,19 @@
 
 <h1 align="center">
-  Deep Learning Specialization
+  Deep Learning Specialization (DeepLearning.AI)
 </h1>
 <br/>
 
 ### Table of contents
 - [Curriculum](https://github.com/jmcheon/deep_learning_specialization/wiki/Curriculum)
-  - [Module1 - Neural Networks and Deep Learning](https://github.com/jmcheon/deep_learning_specialization/wiki/Module1-%E2%80%90-Neural-Networks-and-Deep-Learning) (4 weeks)
-  - [Module2 - Improving Deep Neural Networks](https://github.com/jmcheon/deep_learning_specialization/wiki/Module2-%E2%80%90-Improving-Deep-Neural-Networks) (3 weeks)
-  - [Module3 - Structuring your Machine Learning project](https://github.com/jmcheon/deep_learning_specialization/wiki/Module3-%E2%80%90-Structuring-your-Machine-Learning-project) (2 weeks)
-  - [Module4 - Convolutional Neural Networks](https://github.com/jmcheon/deep_learning_specialization/wiki/Module4-%E2%80%90-Convolutional-Neural-Networks) (4 weeks)
-  - [Module5 - Natural Language Processing](https://github.com/jmcheon/deep_learning_specialization/wiki/Module5-%E2%80%90-Natural-Language-Processing) (4 weeks)
+  - [Course1 - Neural Networks and Deep Learning](https://github.com/jmcheon/deep_learning_specialization/wiki/Course1-%E2%80%90-Neural-Networks-and-Deep-Learning) (4 weeks)
+  - [Course2 - Improving Deep Neural Networks](https://github.com/jmcheon/deep_learning_specialization/wiki/Course2-%E2%80%90-Improving-Deep-Neural-Networks) (3 weeks)
+  - [Course3 - Structuring your Machine Learning project](https://github.com/jmcheon/deep_learning_specialization/wiki/Course3-%E2%80%90-Structuring-your-Machine-Learning-project) (2 weeks)
+  - [Course4 - Convolutional Neural Networks](https://github.com/jmcheon/deep_learning_specialization/wiki/Course4-%E2%80%90-Convolutional-Neural-Networks) (4 weeks)
+  - [Course5 - Natural Language Processing](https://github.com/jmcheon/deep_learning_specialization/wiki/Course5-%E2%80%90-Natural-Language-Processing) (4 weeks)
 - [Standard notations for Deep Learning](#standard-notations-for-deep-learning)
-	- [Neural Networks Notations](#neural-networks-notations)
+	- [1. Neural Networks Notations](#1-neural-networks-notations) 
+	- [2. Deep Learning representations](#2-deep-learning-representations)
 
 ## Standard notations for Deep Learning
 ### 1. Neural Networks Notations
@@ -47,3 +48,20 @@
 $$J_{CE}(\hat y, y) = − \sum^m_{i=0} y^{(i)} \log \hat y^{(i)}$$
 
 $$J_1(\hat y, y) = \sum^{m}_{i=0} | y^{(i)} − \hat y^{(i)} |$$
+
+### 2. Deep Learning representations
+- nodes represent inputs, actiavtions and outputs
+- edges represent weights and biases
+
+Here are several examples of standard deep learning representations
+
+<figure>
+  <img src="https://github.com/jmcheon/deep_learning_specialization/assets/40683323/8763f9d7-01f7-4517-81d1-9d663bcfacee" alt="DL representation1">
+  <figcaption>Figure 1: Comprehensive Network</figcaption>
+</figure>
+
+
+<figure>
+  <img src="https://github.com/jmcheon/deep_learning_specialization/assets/40683323/7a10dd58-f758-4adf-92c7-302b3bd3dfe9" alt="DL representation2">
+  <figcaption>Figure 2: Simplified Network</figcaption>
+</figure>
