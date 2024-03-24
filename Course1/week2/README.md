@@ -5,6 +5,10 @@
 >    - Build a logistic regression model structured as a shallow neural network
 >    - Build the general architecture of a learning algorithm, including parameter initialization, cost function and gradient calculation, and optimization implementation (gradient descent)
 >    - Implement computationally efficient and highly vectored versions of models
+>    - Compute derivatives for logistic regression using a backpropagation mindset
+>    - Use Numpy functions and Numpy matrix/vector operations
+>    - Implement vectorization across multiple training examples
+>    - Explain the concept of broadcasting
 
 ### Table of contents
 1. [Logistic Regression as a Neural Network](#logistic-regression-as-a-neural-network)
@@ -22,26 +26,26 @@
 ### Binary Classification
 
 #### keywords:
-- feature, fecture vector, input fecture vector
+- feature, feature vector, input feature vector
 - label, output label
 - forward propagation, backward propagation
 - logistic regression, binary classification, classifier
 - train, predict
-- size, dimention
+- size, dimension
 
 #### keypoints:
 - organizing the computation of a neural network: forward and backward propagation steps
 - logistic regression as a neural network
 - image representation in a computer
-- transformation of image matrix value into a input feature vector
+- transformation of image matrix value into an input feature vector
 - deep learning notations
 - the default vector: column vector
 - matrix vs vector in numpy representation
 
 #### questions:
 - what are some important techniques when implementing a neural network?
-- why is it better to process the entire traning set without using a explicity for loop to loop over the entire training set?
-- why the computations in learning a neural network can be organized in the forward propagation and a separated back propagation?
+- why is it better to process the entire training set without using an explicit for loop to loop over the entire training set?
+- why the computations in learning a neural network can be organized in forward propagation and a separated backpropagation?
 - why the convention of stacking data in columns to group examples representing input and output matrices is better than the other way(stacking in rows)?
 - what is the number of columns and rows of the input matrix X by doing so? 
 	- : $m$, $n_x$
@@ -57,8 +61,8 @@
 
 #### questions:
 - given the input $x$ and parameters $w, b$, how do we generate the output $\hat y$?
-- what happends when the $Z$ of sigmoid function becomes very large negative number or very small number?
-- why is it better to use the conventional notation for parameters separated in $W$ and $b$ rather than having them as $\theta$ all together in deep learning?
+- what happens when the $Z$ of the sigmoid function becomes a very large negative number or a very small number?
+- why is it better to use the conventional notation for parameters separated in $W$ and $b$ rather than having them as $\theta$ together in deep learning?
 - what are the parameters for logistic regression? 
 	- : W, as $n_x$ dimensional vector, and b, as a real number
 
@@ -81,10 +85,10 @@ Cost function: $$J(w,b) = \frac{1}{m} \sum^m_{i=0} L(\hat y^{(i)}, y^{(i)} ) = -
 
 #### questions:
 - why we don't use the MSE cost function for logistic regression?
-	- : because the optimization problem becomes non convex (multiple local optimums) so gradient descent may not find the global optimum
+	- : because the optimization problem becomes non-convex (multiple local optimums) so gradient descent may not find the global optimum
 - what is the difference between loss function and cost function?
 	- : the loss function computes the error for a single training example; the cost function is the average of the loss function of the entire training set.
-- why do we need/use loss/error function?
+- why do we need/use the loss/error function?
 	- : to measure how well the algorithm is doing/ how good the output $\hat y$ is when the true label is $y$
 - what is the training procedure and what is loss function for?
 - what does it mean finding parameters $W$ and $b$ that minimize the overall cost function $J$?
@@ -110,7 +114,7 @@ repeat: $$w := w - \alpha \frac{\partial J(w, b)}{\partial w} $$
 	- : it controls how big a step we take on each iteration during gradient descent
 - what is the definition of a derivative?
 	- : a slop of a function at a particular point
-- does a convex function always has multiple local optima?
+- does a convex function always have multiple local optima?
 	- : false
 
 ### Logistic Regression Gradient Descent
@@ -153,16 +157,16 @@ $\frac{\partial L}{\partial b} \approx db = \frac{\partial L}{\partial z} \appro
 - the way of computing derivatives
 
 #### questions:
-- what does it mean optimizing/minimizing the cost function?
-- one step of backward propagation on a computation graph yields derivatives of finial output variable
+- what does it mean to optimize/minimize the cost function?
+- one step of backward propagation on a computation graph yields derivatives of the finial output variable
 	- : true
-- what does it mean propagating the change of a parameter to the output value?
-- what is chain rule when calculating derivatives?
+- what does it mean to propagate the change of a parameter to the output value?
+- what is the chain rule when calculating derivatives?
 
 <a id='2'></a>
 ## 2. Python and Vectorization
 
-- Iterative Implementation
+- Iterative version
 ```python
 J = 0, dw1 = 0, dw2 = 0, db = 0
 for i = 1 to m:
@@ -175,7 +179,7 @@ for i = 1 to m:
 	db += dz[i]
 J = J/m, dw1 = dw1/m, dw2 = dw2/m, db = db/m
 ```
-- Vactorized Implementation
+- Vectorized version
 
 $Z = w^TX + b = np.dot(w.T, X) + b$
 
@@ -201,8 +205,8 @@ $$b := b - \alpha db$$
 - a single iteration of gradient descent
 - normalization: makes gradient descent converge faster
 - sigmoid function and its gradient
-- keep vector/matrix dimenstions straight
-- numpy build-in functions
+- keep vector/matrix dimensions straight
+- numpy built-in functions
 
 #### questions:
 - what is python broadcasting
@@ -241,7 +245,7 @@ In this exercise, you will carry out the following steps:
 
 The main steps for building a Neural Network are:
 
-1.  Define the model structure (such as number of input features)
+1.  Define the model structure (such as the number of input features)
 2.  Initialize the model's parameters
 3.  Loop:
     -   Calculate current loss (forward propagation)
@@ -251,7 +255,7 @@ The main steps for building a Neural Network are:
 <a id='4-1'></a>
 ### Forward and Backward propagation
 
-"forward" and "backward" propagation steps for learning the parameters that computes the cost function and its gradient.
+"forward" and "backward" propagation steps for learning the parameters that compute the cost function and its gradient.
 
 
 Forward Propagation:
