@@ -1,4 +1,10 @@
 ## week2 -  Basics of Neural Network programming
+### Summary
+> Set up a machine learning problem with a neural network mindset and use vectorization to speed up your models.
+> - Learning Objectives
+>    - Build a logistic regression model structured as a shallow neural network
+>    - Build the general architecture of a learning algorithm, including parameter initialization, cost function and gradient calculation, and optimization implementation (gradient descent)
+>    - Implement computationally efficient and highly vectored versions of models
 
 ### Table of contents
 1. [Logistic Regression as a Neural Network](#logistic-regression-as-a-neural-network)
@@ -7,6 +13,10 @@
 	- [Logistic Regression Cost Function](#logistic-regression-cost-function)
 	- [Gradient Descent](#gradient-descent)
 	- [Logistic Regression Gradient Descent](#logistic-regression-gradient-descent)
+2. [Python and Vectorization](#2)
+3. [General Architecture of the learning algorithm](#3)
+4. [Building the parts of the algorithm](#4)
+	- [Forward and Backward propagation](#4-1)
 
 ## 1. Logistic Regression as a Neural Network
 ### Binary Classification
@@ -109,13 +119,13 @@ $z =w^Tx + b$
 $\hat y = a = \sigma(z) = \frac{1}{1 + e^{-z}}$
 
 $L(a, y) = -(y \log(a) + (1-y)\log(1-a))$
+
 <div>
 <br><br>
 <img src="https://github.com/jmcheon/deep_learning_specialization/assets/40683323/2e67b6bc-2bcb-4af2-8060-e5aa389ad59e" alt="gradient descent example1">
   <figcaption>Computation graph: two input features x1, x2</figcaption>
 <br><br>
 </div>
-  
 derivatives:
 
 $\frac{\partial L(a, y)}{\partial a} \approx da = -\frac{y}{a} + \frac{1-y}{1-a}$
@@ -148,3 +158,108 @@ $\frac{\partial L}{\partial b} \approx db = \frac{\partial L}{\partial z} \appro
 	- : true
 - what does it mean propagating the change of a parameter to the output value?
 - what is chain rule when calculating derivatives?
+
+<a id='2'></a>
+## 2. Python and Vectorization
+
+- Iterative Implementation
+```python
+J = 0, dw1 = 0, dw2 = 0, db = 0
+for i = 1 to m:
+	z[i] = w.T x[i] + b
+	a[i] = σ(z[i])
+	J += -[y[i]log(a[i]) + (1 - y[i])log(1 - a[i])]
+	dz[i] = a[i] - y[i]
+	dw1 += x1[i]dz[i]
+	dw2 += x2[i]dz[i]
+	db += dz[i]
+J = J/m, dw1 = dw1/m, dw2 = dw2/m, db = db/m
+```
+- Vactorized Implementation
+
+$Z = w^TX + b = np.dot(w.T, X) + b$
+
+$A = \sigma(Z)$
+
+$dZ = A - Y$
+
+$dw = \frac{1}{m}XdZ^T$
+
+$db = \frac{1}{m}np.sum(dZ)$
+
+$$w := w - \alpha dw$$ 
+
+$$b := b - \alpha db$$
+
+
+#### keywords:
+- vectorization
+- broadcasting
+- normalization
+
+#### keypoints:
+- a single iteration of gradient descent
+- normalization: makes gradient descent converge faster
+- sigmoid function and its gradient
+- keep vector/matrix dimenstions straight
+- numpy build-in functions
+
+#### questions:
+- what is python broadcasting
+- what are dot/outer/elementwise products
+- what is vectorization
+
+
+<a id='3'></a>
+## 3. General Architecture of the learning algorithm
+
+It's time to design a simple algorithm to distinguish cat images from non-cat images.
+
+You will build a Logistic Regression, using a Neural Network mindset. The following Figure explains why **Logistic Regression is actually a very simple Neural Network!**
+
+<img width="518" alt="LogReg_kiank" src="https://github.com/jmcheon/deep_learning_specialization/assets/40683323/bf22b2c2-53c4-47aa-84c9-237c92722ec0" style="width:650px;height:400px;">
+
+**Mathematical expression of the algorithm**:
+
+For one example $x^{(i)}$: 
+$$z^{(i)} = w^T x^{(i)} + b$$
+$$\hat{y}^{(i)} = a^{(i)} = sigmoid(z^{(i)})$$ 
+$$\mathcal{L}(a^{(i)}, y^{(i)}) =  - y^{(i)}  \log(a^{(i)}) - (1-y^{(i)} )  \log(1-a^{(i)})$$
+
+The cost is then computed by summing over all training examples:
+ $$J = \frac{1}{m} \sum_{i=1}^m \mathcal{L}(a^{(i)}, y^{(i)})$$
+
+**Key steps**:
+In this exercise, you will carry out the following steps: 
+   - Initialize the parameters of the model
+   - Learn the parameters for the model by minimizing the cost  
+   - Use the learned parameters to make predictions (on the test set)
+   - Analyse the results and conclude
+
+<a id='4'></a>
+## 4. Building the parts of the algorithm
+
+The main steps for building a Neural Network are:
+
+1.  Define the model structure (such as number of input features)
+2.  Initialize the model's parameters
+3.  Loop:
+    -   Calculate current loss (forward propagation)
+    -   Calculate current gradient (backward propagation)
+    -   Update parameters (gradient descent)
+
+<a id='4-1'></a>
+### Forward and Backward propagation
+
+"forward" and "backward" propagation steps for learning the parameters that computes the cost function and its gradient.
+
+
+Forward Propagation:
+- You get X
+- You compute $A = \sigma(w^T X + b) = (a^{(1)}, a^{(2)}, ..., a^{(m-1)}, a^{(m)})$
+- You calculate the cost function: $J = -\frac{1}{m}\sum_{i=1}^{m}(y^{(i)}\log(a^{(i)})+(1-y^{(i)})\log(1-a^{(i)}))$
+
+Here are the two formulas you will be using: 
+
+$$ \frac{\partial J}{\partial w} = \frac{1}{m}X(A-Y)^T$$
+$$ \frac{\partial J}{\partial b} = \frac{1}{m} \sum_{i=1}^m (a^{(i)}-y^{(i)})$$
