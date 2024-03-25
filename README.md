@@ -38,6 +38,33 @@
 - $b^{[l]}  \in \mathbb{R}^{ \text{number of units in next layer}}$ is the bias vector in the $l^{th}$ layer 
 - $\hat y^{(i)}  \in \mathbb{R}^{n_{y}}$ is the predicted output vector. It can also be denoted $a ^{[L]}$ where $L$ is the number of layers in the network
 
+
+##### Example: 
+
+$$x  \in \mathbb{R}, \space y \in \{0, 1\}$$ 
+
+$m$ - the number of examples: $(x^{(1)}, y^{(1)}), (x^{(1)}, y^{(1)}), \dots, (x^{(m)}, y^{(m)})$
+
+$$X=
+\left[
+\begin{matrix}
+| & | & | & | & |\\
+x^{(1)} & x^{(2)} & x^{(3)} & \dots & x^{(m)} \\
+| & | & | & | & | \\
+\end{matrix}
+\right], \space
+Y=
+\left[
+\begin{matrix}
+y^{(1)} & y^{(2)} & y^{(3)} & \dots & y^{(m)}
+\end{matrix}
+\right]
+$$
+
+$$X  \in \mathbb{R}^{n_{x} \times m }, \space X.shape = (n_x, m)$$ 
+
+$$Y \in \mathbb{R}^{1 \times m }, \space Y.shape = (1, m)$$
+
 #### Common forward propagation equation examples:
 - $a = g^{[l]} (W_x x^{(i)} + b_1) = g^{[l]} (z_1)$ where $g^{[l]}$ denotes the $l^{th}$ layer activation function
 - $\hat y^{(i)} = softmax(W_h h + b_2)$
