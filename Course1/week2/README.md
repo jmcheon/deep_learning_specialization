@@ -267,3 +267,6 @@ Here are the two formulas you will be using:
 
 $$ \frac{\partial J}{\partial w} = \frac{1}{m}X(A-Y)^T$$
 $$ \frac{\partial J}{\partial b} = \frac{1}{m} \sum_{i=1}^m (a^{(i)}-y^{(i)})$$
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTgzNzYwNDg2OF19
+-->

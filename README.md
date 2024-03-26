@@ -82,13 +82,6 @@ $$J_1(\hat y, y) = \sum^{m}_{i=0} | y^{(i)} − \hat y^{(i)} |$$
 
 Here are several examples of standard deep learning representations
 
-<figure>
-  <img src="https://github.com/jmcheon/deep_learning_specialization/assets/40683323/8763f9d7-01f7-4517-81d1-9d663bcfacee" alt="DL representation1">
-  <figcaption>Figure 1: Comprehensive Network</figcaption>
-</figure>
-
-
-<figure>
-  <img src="https://github.com/jmcheon/deep_learning_specialization/assets/40683323/7a10dd58-f758-4adf-92c7-302b3bd3dfe9" alt="DL representation2">
-  <figcaption>Figure 2: Simplified Network</figcaption>
-</figure>
+| Comprehensive Network | Simplified Network |   
+| :------: | :------------------------: |
+| <img alt="DL representation1" src="https://github.com/jmcheon/deep_learning_specialization/assets/40683323/8763f9d7-01f7-4517-81d1-9d663bcfacee" width=500 height=250>| <img alt="DL representation2" src="https://github.com/jmcheon/deep_learning_specialization/assets/40683323/7a10dd58-f758-4adf-92c7-302b3bd3dfe9" width=500 height=250 >|

@@ -20,3 +20,6 @@
 - Batch Normalization
 - Multi-class Classification
 - Introdunction to Programming Frameworks
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTExMjYwNTg4MTVdfQ==
+-->

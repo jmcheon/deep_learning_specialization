@@ -24,3 +24,6 @@
 
 ## week4 - Deep Neural Networks
 - Deep Neural Network
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTE3MjEzMTgzNjFdfQ==
+-->

@@ -17,3 +17,6 @@
 - Mismatched Training and Dev/Test Set
 - Learning from multiple tasks
 - End-to-end Deep Learning
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTkzODcwNTM4N119
+-->
