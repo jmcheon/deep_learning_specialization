@@ -1,3 +1,4 @@
+
 ## week3 - One Hidden Layer Neural Networks
 ### Summary
 > Build a neural network with one hidden layer using forward propagation and backpropagation.
@@ -12,14 +13,15 @@
 
 ### Table of contents
 1. [Shallow Neural Network](#1)
-	- [Neural Network Representiation](#1-1)
-	- [Vectorizing Across Multiple Examples](#1-2)
+	- 1-1. [Neural Network Representiation](#1-1)
+	- 1-2. [Vectorizing Across Multiple Examples](#1-2)
+	- 1-3. [Activation Functions](#1-3)
 
 <a id="1"></a>
-## Shallow Neural Network
+## 1. Shallow Neural Network
 
 <a id="1-1"></a>
-### Neural Network Representation
+### 1-1. Neural Network Representation
 
 | 1 Layer Perceptron | 2 Layers Perceptron |   
 | :------: | :------------------------: |
@@ -87,9 +89,10 @@ $$\underbrace{a^{[2]}} _{(1, 1)} =\sigma(\underbrace{z^{[2]}} _{(1, 1)})$$
 - input layer = layer zero
 - hidden layers and output layers have parameters $w$ and $b$ associated with them
 - parameter dimensions 
+- we stack different nodes in a layer vertically to form a corresponding vector ($z, a$)
 
 <a id="1-2"></a>
-### Vectorizing Across Multiple Examples
+### 1-2. Vectorizing Across Multiple Examples
 
 <img alt="nerual net vectorization" src="https://github.com/jmcheon/deep_learning_specialization/assets/40683323/33602743-c9ba-43dc-bb17-946086f4cd0e" width=2000px height=500px>
 
@@ -116,24 +119,53 @@ $A^{[2]} =\sigma(Z^{[2]})$
 
 
 $$X=  \overbrace{\begin{bmatrix}
-| & | & |  & |\\
-x^{(1)} & x^{(2)} & \dots & x^{(m)} \\
-| & | & | & | \\
-\end{bmatrix}}^{\xleftrightarrow{\text {training examples}}}
-\updownarrow \text{features}$$
+x^{(1)}_1 & x^{(2)}_1 & \dots & x^{(m)}_1 \\
+x^{(1)}_2 & x^{(2)}_2 & \dots & x^{(m)}_2 \\
+x^{(1)}_3 & x^{(2)}_3 & \dots & x^{(m)}_3 \\
+\end{bmatrix}}^{\xleftrightarrow{\textbf {training examples}}}
+\updownarrow \textbf{features}$$
 <br>
 
 $$Z^{[1]}=\overbrace{\begin{bmatrix}
-| & | & |  & |\\
-z^{[1] (1)} & z^{[1] (2)} & \dots & z^{[1] (m)} \\
-| & | & | & | \\
-\end{bmatrix}}^{\xleftrightarrow{\text {training examples}}}
-\updownarrow \text{hidden units}$$
+z^{[1] (1)}_1 & z^{[1] (2)}_1 & \dots & z^{[1] (m)}_1 \\
+z^{[1] (1)}_2 & z^{[1] (2)}_2 & \dots & z^{[1] (m)}_2 \\
+z^{[1] (1)}_3 & z^{[1] (2)}_3 & \dots & z^{[1] (m)}_3 \\
+z^{[1] (1)}_4 & z^{[1] (2)}_4 & \dots & z^{[1] (m)}_4 \\
+\end{bmatrix}}^{\xleftrightarrow{\textbf {training examples}}}
+\updownarrow \textbf{hidden units of \textit{layer [1]}}, \space Z^{[2]}=\overbrace{\begin{bmatrix}
+z^{[2] (1)} & z^{[2] (2)} & \dots & z^{[2] (m)} \\
+\end{bmatrix}}^{\xleftrightarrow{\textbf {training examples}}}
+\updownarrow \textbf{hidden units of \textit{layer [2]}}$$
 <br>
 
 $$A^{[1]}=\overbrace{\begin{bmatrix}
-| & | & |  & |\\
-a^{[1] (1)} & a^{[1] (2)} & \dots & a^{[1] (m)} \\
-| & | & | & | \\
-\end{bmatrix}}^{\xleftrightarrow{\text {training examples}}}
-\updownarrow \text{hidden units}$$
+a^{[1] (1)}_1 & a^{[1] (2)}_1 & \dots & a^{[1] (m)}_1 \\
+a^{[1] (1)}_2 & a^{[1] (2)}_2 & \dots & a^{[1] (m)}_2 \\
+a^{[1] (1)}_3 & a^{[1] (2)}_3 & \dots & a^{[1] (m)}_3 \\
+a^{[1] (1)}_4 & a^{[1] (2)}_4 & \dots & a^{[1] (m)}_4 \\
+\end{bmatrix}}^{\xleftrightarrow{\textbf {training examples}}}
+\updownarrow \textbf{hidden units of \textit{layer [1]}}, \space A^{[2]}=\overbrace{\begin{bmatrix}
+a^{[2] (1)} & a^{[2] (2)} & \dots & a^{[2] (m)} \\
+\end{bmatrix}}^{\xleftrightarrow{\textbf {training examples}}}
+\updownarrow \textbf{hidden units of \textit{layer [2]}}$$
+
+<a id="1-3"></a>
+### 1-3. Activation Functions
+
+#### keywords
+- activation function($g$) - either nonlinear or linear(identity)
+- tanh(mathematically a shifted version of sigmoid function)
+- rectified linear nuit(ReLU), leacky ReLU
+
+#### keypoints
+- choice of activation functions(optimization)
+- we no longer use sigmoid as activation function for hidden layers except for the output layer(binary classification)
+- the downsides of both sigmoid and tanh
+- the purpose of activation functions
+
+#### questions
+- why do we use different activation functions for hidden layers and output layers?
+- why is it better to use tanh than sigmoid for hidden layers?
+- what does it mean to slow down gradient descent?
+- what are the advantages of using either ReLU or leacky ReLU?
+- why do we use activation functions and what does it happen when we don't have activation functions in neural networks(or have only linear/identity activation functions)?
