@@ -16,6 +16,7 @@
 	- 1-1. [Neural Network Representiation](#1-1)
 	- 1-2. [Vectorizing Across Multiple Examples](#1-2)
 	- 1-3. [Activation Functions](#1-3)
+	- 1-4. [Gradient Descent for Neural Networks](#1-4)
 
 <a id="1"></a>
 ## 1. Shallow Neural Network
@@ -23,13 +24,13 @@
 <a id="1-1"></a>
 ### 1-1. Neural Network Representation
 
-| 1 Layer Perceptron | 2 Layers Perceptron |   
+| Perceptron | 2 Layers Neural Network |   
 | :------: | :------------------------: |
 |<img width="518" alt="perceptron" src="https://github.com/jmcheon/deep_learning_specialization/assets/40683323/fd70daa4-a69a-461c-b764-d089c6f02dcd" width=500px height=200px>|<img width="518" alt="neural network representation" src="https://github.com/jmcheon/deep_learning_specialization/assets/40683323/e9b5636d-7aab-490e-b6d3-b67c68b119f7" width=500px height=200px>|
 |$z = W^Tx +b$<br>$a=\sigma {(z)}$|$a^{[l]}_i$, where $l$ is the $l^{th}$ layer and $i$ is the $i^{th}$ node<br>$x = a^{[0]}, \space \hat y = a^{[\text{The number of layers}]}$<br><br>$z^{[1]}_1 = w^{[1]T}_1x + b^{[1]}_1, \space a^{[1]}_1 =\sigma(z^{[1]}_1)$<br>$z^{[1]}_2 = w^{[1]T}_2x + b^{[1]}_2, \space a^{[1]}_2 =\sigma(z^{[1]}_2)$<br>$z^{[1]}_3 = w^{[1]T}_3x + b^{[1]}_3,\space  a^{[1]}_3 =\sigma(z^{[1]}_3)$<br>$z^{[1]}_4 = w^{[1]T}_4x + b^{[1]}_4, \space a^{[1]}_4 =\sigma(z^{[1]}_4)$|
 
 
-##### 2 Layers Perceptrion
+##### 2 Layers Neural Network
 
 $$z^{[1]}= \underbrace{\overbrace{\begin{bmatrix}
 \text{-----}  \space w^{[1]T}_1 \text{-----} \space\\
@@ -132,10 +133,10 @@ z^{[1] (1)}_2 & z^{[1] (2)}_2 & \dots & z^{[1] (m)}_2 \\
 z^{[1] (1)}_3 & z^{[1] (2)}_3 & \dots & z^{[1] (m)}_3 \\
 z^{[1] (1)}_4 & z^{[1] (2)}_4 & \dots & z^{[1] (m)}_4 \\
 \end{bmatrix}}^{\xleftrightarrow{\textbf {training examples}}}
-\updownarrow \textbf{hidden units of \textit{layer [1]}}, \space Z^{[2]}=\overbrace{\begin{bmatrix}
+\updownarrow \textbf{hidden units of \textit{layer 1}}, \space Z^{[2]}=\overbrace{\begin{bmatrix}
 z^{[2] (1)} & z^{[2] (2)} & \dots & z^{[2] (m)} \\
 \end{bmatrix}}^{\xleftrightarrow{\textbf {training examples}}}
-\updownarrow \textbf{hidden units of \textit{layer [2]}}$$
+\updownarrow \textbf{hidden units of \textit{layer 2}}$$
 <br>
 
 $$A^{[1]}=\overbrace{\begin{bmatrix}
@@ -144,10 +145,11 @@ a^{[1] (1)}_2 & a^{[1] (2)}_2 & \dots & a^{[1] (m)}_2 \\
 a^{[1] (1)}_3 & a^{[1] (2)}_3 & \dots & a^{[1] (m)}_3 \\
 a^{[1] (1)}_4 & a^{[1] (2)}_4 & \dots & a^{[1] (m)}_4 \\
 \end{bmatrix}}^{\xleftrightarrow{\textbf {training examples}}}
-\updownarrow \textbf{hidden units of \textit{layer [1]}}, \space A^{[2]}=\overbrace{\begin{bmatrix}
+\updownarrow \textbf{hidden units of \textit{layer 1}}, \space A^{[2]}=\overbrace{\begin{bmatrix}
 a^{[2] (1)} & a^{[2] (2)} & \dots & a^{[2] (m)} \\
 \end{bmatrix}}^{\xleftrightarrow{\textbf {training examples}}}
-\updownarrow \textbf{hidden units of \textit{layer [2]}}$$
+\updownarrow \textbf{hidden units of \textit{layer 2}}$$
+
 
 <a id="1-3"></a>
 ### 1-3. Activation Functions
@@ -167,5 +169,43 @@ a^{[2] (1)} & a^{[2] (2)} & \dots & a^{[2] (m)} \\
 - why do we use different activation functions for hidden layers and output layers?
 - why is it better to use tanh than sigmoid for hidden layers?
 - what does it mean to slow down gradient descent?
-- what are the advantages of using either ReLU or leacky ReLU?
-- why do we use activation functions and what does it happen when we don't have activation functions in neural networks(or have only linear/identity activation functions)?
+- what are the advantages of using either ReLU or leaky ReLU?
+- why do we use activation functions and what happens when we don't have activation functions in neural networks(or have only linear/identity activation functions)?
+
+<a id="1-4"></a>
+### 1-4. Gradient Descent for Neural Networks
+**Parameters:** $\underbrace{w^{[1]}} _{(n^{[1]}, n^{[0]})}, \underbrace{b^{[1]}} _{(n^{[1]}, 1)}, \underbrace{w^{[2]}} _{(n^{[2]}, n^{[1]})}, \underbrace{b^{[2]}} _{(n^{[2]}, 1)}\qquad n^{[0]} = n_x, \space n^{[1]}, \space n^{[2]} =1$
+
+**Cost function:** $$J(w^{[1]}, b^{[1]}, w^{[2]}, b^{[2]})=\frac{1}{m} \sum^{n}_{i=0}L(\underbrace{\hat y} _{a^{[2]}}, y)$$
+
+**Gradient descent:** 
+
+$\qquad Repeat \space$ {
+
+$$\text{compute predictions}\space (\hat y^{(i)}, \space i = 1 \dots m)$$
+
+$$dw^{[1]} = \frac{\partial J}{\partial w^{[1]}}, \space db^{[1]} = \frac{\partial J}{\partial b^{[1]}}$$
+
+$$w^{[1]} := w^{[1]} - \alpha \space dw^{[1]}$$
+
+$$b^{[1]} := b^{[1]} - \alpha \space db^{[1]}$$
+
+$$dw^{[2]} = \frac{\partial J}{\partial w^{[2]}}, \space db^{[2]} = \frac{\partial J}{\partial b^{[2]}}$$
+
+$$w^{[2]} := w^{[2]} - \alpha \space dw^{[2]}$$
+
+$$b^{[2]} := b^{[2]} - \alpha \space db^{[2]}$$
+
+$\qquad$ }
+
+#### Formulas for computing derivatives
+| Forward Propagation | Backward Propagation |   
+| :------: | :------------------------: |
+|$Z^{[1]} = W^{[1]}A^{[0]}  + b^{[1]}$<br>$A^{[1]} =g(Z^{[1]})$<br>$Z^{[2]} = W^{[2]}A^{[1]} + b^{[1]}$<br>$A^{[2]} =g(Z^{[2]})$|$dZ^{[2]}=A^{[2]}-Y, \space Y=[y^{(1)}, y^{(1)}, \dots, y^{(m)}]$<br>$dW^{[2]}=\frac{1}{m}dZ^{[2]}A^{[1]T}$<br>$db^{[2]}=\frac{1}{m}np.sum(dZ^{[2]}, axis=1, keepdims=True)$<br>$dZ^{[1]}=\underbrace{W^{[2]T}dZ^{[2]}} _{(n^{[1]}, m)}\space * \space \underbrace{g^{[1]'}(Z^{[1]})} _{(n^{[1]}, m)}$<br>$dW^{[1]}=\frac{1}{m}dZ^{[1]}X^{T}$<br>$db^{[1]}=\frac{1}{m}np.sum(dZ^{[1]}, axis=1, keepdims=True)$|
+
+#### keypoints
+- how to compute the partial derivative terms for parameters
+
+#### questions
+- why is it important to initialize parameters randomly rather than to all zeros?
+- why does initializing weights to all zeros not work when applying gradient descent?
