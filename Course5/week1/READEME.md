@@ -21,7 +21,7 @@ $W_{ax}$: the second index means that this $W_{ax}$ is going to be multiplied by
 - the parameters it uses for each time step are shared
 
 why not a standard network?
-- inputs, outputs can be different lengths in different examples
+- inputs and outputs can be different lengths in different examples
 - doesn't share features learned across different positions of text
 
 <a id="1-2"></a>
@@ -30,32 +30,32 @@ why not a standard network?
 <img width="961" alt="rnn_step_forward" src="https://github.com/jmcheon/deep_learning_specialization/assets/40683323/ebfdf078-de53-4be0-83a1-893a65abedc9">
 
 
-$$a^{<t>}=g_1(\underbrace{W_{aa}} _{(100, 100)} \underbrace{a^{<t-1>}} _{100} + \underbrace{W_{ax}} _{(100, 10000)} \underbrace{x^{<t>}} _{10000} + b_a)$$
+$$a^{<t>}=g_1(\underbrace{W_{aa}} _{(100, 100)} \underbrace{a^{< t - 1 >}} _{100} + \underbrace{W _{ax}} _{(100, 10000)} \underbrace{x^{< t >}} _{10000} + b_a)$$
 
-$$\hat y^{<t>}=g_2(W_{ya}a^{<t>} + b_y)$$
+$$\hat y^{< t >}=g_2(W _{ya}a^{< t >} + b_y)$$
 
 
 simplified RNN notation
 
-$$a^{<t>}=g_1(W_{a}[a^{<t-1>},x^{<t>}] + b_a)$$
+$$a^{< t >}=g_1(W_{a}[a^{< t - 1 >},x^{< t >}] + b_a)$$
 
-$$\underbrace{W_a} _{(100, 10100)} = [\underbrace{W_{aa}} _{100}  \space \underbrace{W_{ax}} _{10000}] $$
+$$\underbrace{W_{a}} _{(100, 10100)} = [\underbrace{W _{aa}} _{100}  \space \underbrace{W _{ax}} _{10000}]$$ 
 
-$$[\underbrace{a^{<t-1>}} _{100}, \underbrace{x^{<t>}} _{10000}] =
+$$[\underbrace{a^{< t - 1 >}} _{100}, \underbrace{x^{< t >}} _{10000}] =
 \begin{bmatrix}
-a^{<t-1>}\\
-x^{<t>} 
+a^{< t - 1 >}\\
+x^{< t >} 
 \end{bmatrix} \updownarrow{10100}$$
 
 
-$$\hat y^{<t>}=g_2(W_{y}a^{<t>} + b_y)$$
+$$\hat y^{< t >}=g_2(W_{y}a^{< t >} + b_y)$$
 
 <a id="1-3"></a>
 #### Backpropagation through time
 
-$$L^{<t>}(\hat y^{<t>}, y^{<t>})=-y^{<t>}\log(y^{<t>}) - (1 - y^{<t>})\log(1 - y^{<t>})$$
+$$L^{< t >}(\hat y^{< t >}, y^{< t >})=-y^{< t >}\log(y^{< t >}) - (1 - y^{< t >})\log(1 - y^{< t >})$$
 
-$$L(\hat y, y) = \sum_{t=1}^{T_y} L^{<t>}(\hat y^{<t>}, y^{<t>})$$
+$$L(\hat y, y) = \sum_{t=1}^{T_y} L^{< t >}(\hat y^{< t >}, y^{< t >})$$
 
 <a id="1-4"></a>
 #### Different types of RNN
