@@ -90,6 +90,8 @@ Cost function: $$J(w,b) = \frac{1}{m} \sum^m_{i=0} L(\hat y^{(i)}, y^{(i)} ) = -
 	- : the loss function computes the error for a single training example; the cost function is the average of the loss function of the entire training set.
 - why do we need/use the loss/error function?
 	- : to measure how well the algorithm is doing/ how good the output $\hat y$ is when the true label is $y$
+- why do we need cost function?
+ 	- : to change the parameters $w$ and $b$
 - what is the training procedure and what is loss function for?
 - what does it mean finding parameters $W$ and $b$ that minimize the overall cost function $J$?
 
