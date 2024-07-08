@@ -1,25 +1,33 @@
 # Course2 - Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization
 
+In course 2 on the practical aspects of deep learning, you'll learn how to make your neural networks work well. Ranging from hyperparameter tuning to how to set up your data set, to how to make sure your optimization algorithm runs quickly so that you get your learning algorithm to learn in a reasonable amount of time.
+
 ### Table of Contents
 
-  - [week1 - Practical Aspects of Deep Learning](#week1---practical-aspects-of-deep-learning)
-  - [week2 - Optimization Algorithms](#week2---optimization-algorithms)
-  - [week3 - Hyperparameter Tuning, Batch Normalization and Programming Frameworks](#week3---hyperparameter-tuning-batch-normalization-and-programming-frameworks)
+  - [week1 - Practical Aspects of Deep Learning](https://github.com/jmcheon/deep_learning_specialization/tree/main/Course2/week1)
+  - [week2 - Optimization Algorithms](https://github.com/jmcheon/deep_learning_specialization/tree/main/Course2/week2)
+  - [week3 - Hyperparameter Tuning, Batch Normalization and Programming Frameworks](https://github.com/jmcheon/deep_learning_specialization/tree/main/Course2/week3)
 <br/>
 
+
 ## week1 - Practical Aspects of Deep Learning
+Discover and experiment with a variety of different initialization methods, apply L2 regularization and dropout to avoid model overfitting, then apply gradient checking to identify errors in a fraud detection model.
+
 - Setting up your Machine Learning Application
 - Regularizing your Neural Network
 - Setting up your Optimization Problem
 
+
+
 ## week2 -  Optimization Algorithms
+Develop your deep learning toolbox by adding more advanced optimizations, random minibatching and learning rate decay scheduling to speed up your model.
+
 - Optimization Algorithms
 
 ## week3 - Hyperparameter Tuning, Batch Normalization and Programming Frameworks
+Explore Tenserflow, a deep learning framework that allows you to build neural networks quickly and easily, then train a neural network on a Tensorflow dataset.
+
 - Hyperparameter Tuning
 - Batch Normalization
 - Multi-class Classification
 - Introdunction to Programming Frameworks
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMjYwNTg4MTVdfQ==
--->
