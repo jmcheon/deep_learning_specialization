@@ -1,6 +1,4 @@
-
-
-## week1 - ML Strategy
+# week1 - ML Strategy
 ### Summary
 > Streamline and optimize your ML production workflow by implementing strategic guidelines for goal-setting and applying human-level performance to help define key priorities.
 > - Learning Objectives
@@ -29,9 +27,9 @@
 	- 3-5. [Improving your Model Performance](#3-5)
 
 <a id="1"></a>
-### 1. Introduction to ML Strategy
+## 1. Introduction to ML Strategy
 <a id="1-1"></a>
-#### 1-1. Why ML Strategy
+### 1-1. Why ML Strategy
 When you're building an AI model and you want to improve its performance, there are numerous strategies and methods to consider. Here, you can learn various strategies and ways of analyzing a machine learning problem that can help you identify the most promising approaches to try.
 
 **Ideas**:
@@ -48,7 +46,7 @@ When you're building an AI model and you want to improve its performance, there 
 	- Number of hidden units
 
 <a id="1-2"></a>
-#### 1-2. Orthogonalization
+### 1-2. Orthogonalization
 Orthogonalization refers to the strategy of adjusting one aspect of the model at a time instead of modifying multiple factors simultaneously. This helps in isolating the impact of each change and understanding which adjustments are most effective.
 
 **Chain of assumptions in ML**
@@ -66,9 +64,9 @@ Orthogonalization refers to the strategy of adjusting one aspect of the model at
 <br>
 
 <a id="2"></a>
-### 2. Setting up your Goal
+## 2. Setting up your Goal
 <a id="2-1"></a>
-#### 2-1. Single Number evaluation Metric
+### 2-1. Single Number evaluation Metric
 
 **Precision**: of examples recognized as true, what percentage are actually true
 
@@ -86,7 +84,7 @@ Setting up dev set, which is you're measuring precision and recall and the evalu
 <br>
 
 <a id="2-2"></a>
-#### 2-2. Satisficing and Optimizing Metric
+### 2-2. Satisficing and Optimizing Metric
 
 Example:
 <table>
@@ -125,7 +123,7 @@ When there are $n$ number of metrics, it is reasonable to choose one metric as t
 <br>
 
 <a id="2-3"></a>
-#### 2-3. Train/Dev/Test Distributions
+### 2-3. Train/Dev/Test Distributions
 Guideline:
 
 - Choose the dev set and test set to reflect the data you expect to get in the future and consider important to do well on.
@@ -137,7 +135,7 @@ The data used should resemble the future data you expect to encounter and want t
 <br>
 
 <a id="2-4"></a>
-#### 2-4. Size of the Dev Set and Test Set
+### 2-4. Size of the Dev Set and Test Set
 **Size of Test Set**
 
 - Ensure test set is large enough to give high confidence in the overall performance of your system.
@@ -153,7 +151,7 @@ The data used should resemble the future data you expect to encounter and want t
 <br>
 
 <a id="2-5"></a>
-#### 2-5. When to change Dev/Test Sets and Metrics
+### 2-5. When to change Dev/Test Sets and Metrics
 
 If the evaluation metric does not give a correct rank order preference for better algorithms, it is time to redefine the evaluation metric.
 
@@ -171,9 +169,9 @@ If real-world data doesn't correspond to the dev/test sets, consider changing de
 <br>
 
 <a id="3"></a>
-### 3. Comparing to Human-level Performance
+## 3. Comparing to Human-level Performance
 <a id="3-1"></a>
-#### 3-1. Why Human-level Performance?
+### 3-1. Why Human-level Performance?
 
 There are main two reasons to compare ML systems to human-level performance:
 
@@ -194,7 +192,7 @@ Humans are quite good at a lot of tasks. When ML performs worse than humans, you
 
 
 <a id="3-2"></a>
-#### 3-2. Avoidable Bias
+### 3-2. Avoidable Bias
 Example:
 
 <table>
@@ -228,10 +226,11 @@ Human-level error serves as an estimate for Bayes error. With the same training 
 <br>
 
 <a id="3-3"></a>
-#### 3-3. Understanding Human-level Performance
+### 3-3. Understanding Human-level Performance
 Human-level error as a proxy for Bayes error.
 
 **Example: Medical image classification**
+
 suppose:
 
 (a) Typical human - 3% error
@@ -247,7 +246,7 @@ Bayes error is always less than the lowest value of human-level error. For pract
 <br>
 
 <a id="3-4"></a>
-#### 3-4. Surpassing Human-level Performance
+### 3-4. Surpassing Human-level Performance
 
 **Problems where ML significantly surpasses human-level performance:**
 - online advertising
@@ -262,7 +261,7 @@ In some natural perception tasks, computers have surpassed human-level performan
 <br>
 
 <a id="3-5"></a>
-#### 3-5. Improving your Model Performance
+### 3-5. Improving your Model Performance
 Let's pull it together into a single guideline on how to improve the performance of your learning algorithm.
 
 - Orthogonalization
