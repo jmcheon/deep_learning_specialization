@@ -1,4 +1,4 @@
-## week4 - Deep Neural Networks
+# week4 - Deep Neural Networks
 ### Summary
 > Analyze the key computations underlying deep learning, then use them to build and train deep neural networks for computer vision tasks.
 > - Learning Objectives

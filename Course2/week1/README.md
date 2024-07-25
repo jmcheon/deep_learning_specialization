@@ -1,5 +1,5 @@
 
-## week1 - Practical Aspects of Deep Learning
+# week1 - Practical Aspects of Deep Learning
 ### Summary
 > Discover and experiment with a variety of different initialization methods, apply L2 regularization and dropout to avoid model overfitting, and then apply gradient checking to identify errors in a fraud detection model.
 > - Learning Objectives
@@ -31,9 +31,9 @@ In this first week, we will first talk about the cellular machine learning probl
 	- 3-2. [Weight initialization for deep networks](#3-2)
 
 <a id="1"></a>
-### 1. Setting up your Machine Learning Application
+## 1. Setting up your Machine Learning Application
 <a id="1-1"></a>
-#### 1-1.  Train / Dev / Test sets
+### 1-1.  Train / Dev / Test sets
 #### keywords
 - cellular machine learning problem
 - hold-out cross validation set
@@ -49,7 +49,7 @@ In this first week, we will first talk about the cellular machine learning probl
 - The purpose of each train, dev, and test set
 
 <a id="1-2"></a>
-#### 1-2. Bias & Variance trade-off
+### 1-2. Bias & Variance trade-off
 
 If you plot the decision boundary, you see if it's underfitting (high bias) or overfitting (high variance).
 In high-dimensional problems, there are a couple of different metrics to try to understand the bias and variance.
@@ -78,7 +78,7 @@ In the case of how to analyze bias and variance, we refer to the Optimal Error c
 
 
 <a id="1-3"></a>
-#### 1-3. Basic Recipe for Machine Learning
+### 1-3. Basic Recipe for Machine Learning
 
 |Diagnosis|Basic Recipe to try|
 |--|--|
@@ -93,9 +93,9 @@ In the case of how to analyze bias and variance, we refer to the Optimal Error c
 	- having a good training set performance as well as having a good dev set performance
 
 <a id="2"></a>
-### 2. Regularizing your Neural Network
+## 2. Regularizing your Neural Network
 <a id="2-1"></a>
-#### 2-1. Regularization
+### 2-1. Regularization
 
 In logistic regression:
 
@@ -149,7 +149,7 @@ L2 regularization is also called weight decay since it multiplies weights by $(1
 - how does regularization prevent overfitting?
 
 <a id="2-2"></a>
-#### 2-2. Dropout Regularization
+### 2-2. Dropout Regularization
 
 **Inverted dropout**
 
@@ -187,7 +187,7 @@ by dividing the value of keep-prop, it ensures that the expected value of a3 rem
 - when to use dropout regularization?
 
 <a id="2-3"></a>
-#### 2-3. Other Regularization methods
+### 2-3. Other Regularization methods
 #### keywords
 - data augmentation
 - early stopping
@@ -196,9 +196,9 @@ by dividing the value of keep-prop, it ensures that the expected value of a3 rem
 - what is the downside of early stopping?
 
 <a id="3"></a>
-### 3. Setting up your Optimization Problem
+## 3. Setting up your Optimization Problem
 <a id="3-1"></a>
-#### 3-1. Normalizing inputs
+### 3-1. Normalizing inputs
 
 Normalize mean to 0 and variance to 1.
 
@@ -221,7 +221,7 @@ $$x = x / \sigma$$
 - why do we normalize input features
 	- to avoid having an elongated cost function which makes it harder to find the global minimum during gradient descent
 <a id="3-2"></a>
-#### 3-2. Weight initialization for deep networks
+### 3-2. Weight initialization for deep networks
 
 We multiply random initialization by an extra term to adjust the weight's variance in order to avoid vanishing or exploding gradients
 

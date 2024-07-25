@@ -1,4 +1,5 @@
-## week2 -  Optimization Algorithms
+
+# week2 -  Optimization Algorithms
 ### Summary
 > Develop your deep learning toolbox by adding more advanced optimizations, random minibatching and learning rate decay scheduling to speed up your model.
 > - Learning Objectives
@@ -16,9 +17,9 @@
 	- 1-6. [Learning Rate Decay](#1-6)
 
 <a id="1"></a>
-### 1. Optimization Algorithms
+## 1. Optimization Algorithms
 <a id="1-1"></a>
-#### 1-1. Mini-batch Gradient Descent
+### 1-1. Mini-batch Gradient Descent
 
 **Batch Size Comparison**
 |Type|Stochastic|Mini-batch|Batch|
@@ -36,7 +37,7 @@
 - Ensure the batch size fits in available CPU/GPU memory
 
 <a id="1-2"></a>
-#### 1-2. Exponentially Weighted Average
+### 1-2. Exponentially Weighted Average
 A technique that smooths a sequence of values by giving more weight to recent observations.
 The exponentially weighted average is defined as: $$V_t = \beta V_{t-1} + (1 - \beta)\theta_t$$
 
@@ -53,7 +54,7 @@ Bias correction compensates for the fact that $V_t$ is initialized at zero and m
 
 
 <a id="1-3"></a>
-#### 1-3. Gradient Descent with Momentum
+### 1-3. Gradient Descent with Momentum
 When the learning rate is too high, the gradient descent process might oscillate. These oscillations can slow down gradient descent and prevent you from using a much larger learning rate. Specifically, if you were to use a much larger learning rate, you might end up overshooting and causing the algorithm to diverge.
 
 In gradient descent, you want your learning to be slower on the vertical axis to avoid oscillations but faster on the horizontal axis to achieve the convergence.
@@ -83,7 +84,7 @@ The algorithm computes the moving average of the derivatives $dW$ and $db$ for w
 This moving average helps to smooth out the steps in gradient descent, reducing oscillations and allowing for a more stable convergence.
 
 <a id="1-4"></a>
-#### 1-4. RMSprop
+### 1-4. RMSprop
 RMSprop is an optimization algorithm that helps in adjusting the learning rate by considering the magnitude of recent gradients, which stabilizes the training process.
 
 **Algorithm**
@@ -141,7 +142,7 @@ Common choices for $\beta_1 = 0.9$, $\beta_2 = 0.999$, and a small value $\epsil
 - **Parameter Update**: The parameters are updated using the corrected values of velocities and squared gradients, with $\epsilon$ added to the denominator for numerical stability.
 
 <a id="1-6"></a>
-#### 1-6. Learning Rate Decay
+### 1-6. Learning Rate Decay
 When using mini-batch gradient descent, the inherent noise due to mini-batch updates means the algorithm will never fully converge. Initially, a relatively large learning rate accelerates learning. As the learning rate decreases over time, the steps become smaller and more precise, allowing the algorithm to oscillate in a tighter region near the minimum, rather than wandering far away even as training continues.
 
 **Decay Formula**

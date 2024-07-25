@@ -1,4 +1,5 @@
-## week3 - Hyperparameter Tuning, Batch Normalization and Programming Frameworks
+
+# week3 - Hyperparameter Tuning, Batch Normalization and Programming Frameworks
 
 ### Summary
 > Explore Tenserflow, a deep learning framework that allows you to build neural networks quickly and easily, then train a neural network on a Tensorflow dataset.
@@ -14,18 +15,17 @@
 
 ### Table of contents
 1. [Hyperparameter Tuning](#1)
+	- 1-1. [Tuning Process](#1-1)
+	- 1-2. [Using an Appropriate Scale to Pick Hyperparameters](#1-2)
+	- 1-3. [Hyperparameters Tuning in Practice: Pandas VS Caviar](#1-3)
 2. [Batch Normalization](#2)
-	- Normalizing Activations in a Network
-	- Fitting Batch Norm into A Neural Network
-	- Batch Norm at Test Time
 3. [Multiclass Classification](#3)
-	- Softmax Regression
-	- Training a Softmax Classifier
 
 
 <a id="1"></a>
-### 1. Hyperparameter Tuning
-#### 1-1. Tuning Process
+## 1. Hyperparameter Tuning
+<a id="1-1"></a>
+### 1-1. Tuning Process
 **Hyperparameter Importance**
 1. Learning rate ($\alpha$)
 2. momentum ($\beta$), mini-batch size,  number of hidden units
@@ -37,8 +37,10 @@ It is challenging to predict which hyperparameters will be the most important fo
 **Coarse to Fine**
 If you identify a promising hyperparameter value from the random search, you can narrow down the search space and sample more densely within this smaller region.
 
+<br>
 
-#### 1-2. Using an Appropriate Scale to Pick Hyperparameters
+<a id="1-2"></a>
+### 1-2. Using an Appropriate Scale to Pick Hyperparameters
 Sample on a log scale instead of a uniform scale to better explore the range of hyperparameters.
 
 For example:
@@ -53,10 +55,13 @@ $1 - \beta = 10^r$
 
 $\beta = 1 - 10^r$
 
-#### 1-3. Hyperparameters Tuning in Practice: Pandas VS Caviar
-||Panda Approach<br/>(Babysitting one model)|Caviar Approach<br/>(Train many models in parallel)|
-|--|--|--|
-||- Suitable when you have limited computational resources<br/>- Involve carefully monitoring and tweaking one model to optimize its performance|- Suitable when you have ample computational resources<br/> - Involve training many models in parallel with different hyperparameters to find the optimal combination more quickly|
+<br>
+
+<a id="1-3"></a>
+### 1-3. Hyperparameters Tuning in Practice: Pandas VS Caviar
+|Panda Approach<br/>(Babysitting one model)|Caviar Approach<br/>(Train many models in parallel)|
+|--|--|
+|- Suitable when you have limited computational resources<br/>- Involve carefully monitoring and tweaking one model to optimize its performance|- Suitable when you have ample computational resources<br/> - Involve training many models in parallel with different hyperparameters to find the optimal combination more quickly|
 
 **Considerations**
 
@@ -64,7 +69,7 @@ $\beta = 1 - 10^r$
 - **Data size and Training time**: The size of your dataset and the time it takes to train a model will also affect your hyperparameter tuning strategy
 
 <a id="2"></a>
-### 2. Batch Normalization
+## 2. Batch Normalization
 Batch normalization is a technique to improve the training of neural networks by normalizing the inputs of each layer.
 
 **Normalization**
@@ -112,7 +117,7 @@ so you can eliminate $b$ just by setting it to zero.
 
 
 <a id="3"></a>
-### 3. Multiclass Classification
+## 3. Multiclass Classification
 
 Multiclass classification is a type of classification task where the goal is to assign an input to one of $C$ classes.
 

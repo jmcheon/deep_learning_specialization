@@ -1,4 +1,4 @@
-## week2 -  Basics of Neural Network programming
+# week2 -  Basics of Neural Network programming
 ### Summary
 > Set up a machine learning problem with a neural network mindset and use vectorization to speed up your models.
 > - Learning Objectives
@@ -11,19 +11,22 @@
 >    - Explain the concept of broadcasting
 
 ### Table of contents
-1. [Logistic Regression as a Neural Network](#logistic-regression-as-a-neural-network)
-	- [Binary Classification](#binary-classification)
-	- [Logistic Regression](#logistic-regression)
-	- [Logistic Regression Cost Function](#logistic-regression-cost-function)
-	- [Gradient Descent](#gradient-descent)
-	- [Logistic Regression Gradient Descent](#logistic-regression-gradient-descent)
+1. [Logistic Regression as a Neural Network](#1)
+	- 1-1. [Binary Classification](#1-1)
+	- 1-2. [Logistic Regression](#1-2)
+	- 1-3. [Logistic Regression Cost Function](#1-3)
+	- 1-4. [Gradient Descent](#1-4)
+	- 1-5. [Computational Graph](#1-5)
+	- 1-6. [Logistic Regression Gradient Descent](#1-6)
 2. [Python and Vectorization](#2)
 3. [General Architecture of the learning algorithm](#3)
 4. [Building the parts of the algorithm](#4)
-	- [Forward and Backward propagation](#4-1)
+	- 4-1. [Forward and Backward propagation](#4-1)
 
+<a id="1"></a>
 ## 1. Logistic Regression as a Neural Network
-### Binary Classification
+<a id="1-1"></a>
+### 1-1. Binary Classification
 
 #### keywords:
 - feature, feature vector, input feature vector
@@ -50,8 +53,10 @@
 - what is the number of columns and rows of the input matrix X by doing so? 
 	- : $m$, $n_x$
 
+<br>
 
-### Logistic Regression
+<a id="1-2"></a>
+### 1-2. Logistic Regression
 #### keywords:
 - logistic regression
 - sigmoid
@@ -90,12 +95,13 @@ Cost function: $$J(w,b) = \frac{1}{m} \sum^m_{i=0} L(\hat y^{(i)}, y^{(i)} ) = -
 	- : the loss function computes the error for a single training example; the cost function is the average of the loss function of the entire training set.
 - why do we need/use the loss/error function?
 	- : to measure how well the algorithm is doing/ how good the output $\hat y$ is when the true label is $y$
-- why do we need cost function?
- 	- : to change the parameters $w$ and $b$
 - what is the training procedure and what is loss function for?
 - what does it mean finding parameters $W$ and $b$ that minimize the overall cost function $J$?
 
-### Gradient Descent
+<br>
+
+<a id="1-3"></a>
+### 1-3. Gradient Descent
 repeat: $$w := w - \alpha \frac{\partial J(w, b)}{\partial w} $$
  $$b := b - \alpha \frac{\partial J(w, b)}{\partial b}$$
  $\alpha$ : learning rate
@@ -119,7 +125,10 @@ repeat: $$w := w - \alpha \frac{\partial J(w, b)}{\partial w} $$
 - does a convex function always have multiple local optima?
 	- : false
 
-### Logistic Regression Gradient Descent
+<br>
+
+<a id="1-4"></a>
+### 1-4. Logistic Regression Gradient Descent
 $z =w^Tx + b$
 
 $\hat y = a = \sigma(z) = \frac{1}{1 + e^{-z}}$
@@ -255,7 +264,7 @@ The main steps for building a Neural Network are:
     -   Update parameters (gradient descent)
 
 <a id='4-1'></a>
-### Forward and Backward propagation
+### 4-1. Forward and Backward propagation
 
 "forward" and "backward" propagation steps for learning the parameters that compute the cost function and its gradient.
 
@@ -269,6 +278,3 @@ Here are the two formulas you will be using:
 
 $$ \frac{\partial J}{\partial w} = \frac{1}{m}X(A-Y)^T$$
 $$ \frac{\partial J}{\partial b} = \frac{1}{m} \sum_{i=1}^m (a^{(i)}-y^{(i)})$$
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgzNzYwNDg2OF19
--->
