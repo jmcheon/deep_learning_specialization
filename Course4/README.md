@@ -16,12 +16,18 @@ Implement the foundational layers of CNNs (pooling, convolutions) and stack them
 - Convolutional Neural Networks
 
 ## week2 - Deep Convolutional Models: Case Studies
+Discover some powerful practical tricks and methods used in deep CNNs, straight from the research papers, then apply transfer learning to your own deep CNN
+
 - Case Studies
 - Practical Advice for using ConvNets
 
 ## week3 - Object Detection
+Apply your new knowledge of CNNs to one of the hottest (and most challenging) fields in computer vision: object detection
+
 - Detection Algorithms
 
 ## week4 - Special Applications: Face recognition and Neural Style Transfer
+Explore how CNNs can be applied to multiple fields, including art generation and face recognition, then implement your own algorithm to generate art and recognize faces!
+
 - Face Recognition
 - Neural Style Transfer
