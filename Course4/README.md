@@ -16,12 +16,16 @@ Implement the foundational layers of CNNs (pooling, convolutions) and stack them
 - Convolutional Neural Networks
 
 ## week2 - Deep Convolutional Models: Case Studies
+Discover some powerful practical tricks and methods used in deep CNNs, straight from the research paper, then apply transfer leraning to your own deep CNN
+
 Discover some powerful practical tricks and methods used in deep CNNs, straight from the research papers, then apply transfer learning to your own deep CNN
 
 - Case Studies
 - Practical Advice for using ConvNets
 
 ## week3 - Object Detection
+Apply your new knowledge of CNNs to one of the hottest (and most challenging) fields in computer vision: object detection
+
 Apply your new knowledge of CNNs to one of the hottest (and most challenging) fields in computer vision: object detection
 
 - Detection Algorithms

@@ -3,7 +3,7 @@
 
 ### Summary
 > Discover some powerful practical tricks and methods used in deep CNNs, straight from the research papers, then apply transfer learning to your own deep CNN
-> - Learning Objective
+> - Learning Objectives
 >   - Implement the basic building blocks of ResNet in a deep neural network using Keras
 >   - Train a state-of-the-art neural network for image classification
 >   - Implement a skip connection in your network
