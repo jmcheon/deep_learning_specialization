@@ -16,6 +16,8 @@
 ### Table of Contents
 1. [Detection Algorithms](#1)
 	- 1-1. [Object Localization](#1-1)
+	- 1-2. [Landmark Detection](#1-2)
+	- 1-3. [Object Detection](#1-3)
 
 <a id="1"></a>
 ## Detection Algorithms
@@ -71,4 +73,38 @@ $$L(\hat y, y) = (\hat y_1 - y_1)^2 + (\hat y_2 - y_2)^2 + \dots + (\hat y_8 - y
 $$L(\hat y, y) = (\hat y_1 - y_1)^2\text{, if } y_1 = 0$$
 
 
+<br>
+
+<a id="1-2"></a>
+### 1-2. Landmark Detection
+
+- Output:  $(l_x, l_y)$ coordinates 
+
+**Definition**: Landmark detection refers to the process of identifying specific points of interests (landmarks) in an image. For example, in facial recognition, landmarks might include the corners of the eyes, the tip of the nose, the corners of the mouth.
+
+
+**Purpose**: The main objective is to establish the potition and orientation of an object within a scene. This is essential for tasks that require obejct recognition, tracking, and alignement.
+
+<br>
+
+<a id="1-3"></a>
+### 1-3. Object Detection
+
+#### Sliding windows detection
+Sliding windows detection is a technique used in object detection where a fixed-size window moves across the image to identify objects.
+
+1. **Window initialization**: A square or rectangular window of a specific size is defined
+2. **Sliding the window**: The window is moved across the image in a systematic manner, staring from the upper-left corner, typecally both horizontally and vertically
+3. **Classification**: At each position, the content within the window is extracted and passed through a classifier (ConvNet) to determine if an object is present and, if so, what type it is
+4. **Output**: The locations of detected objects are recorded, with bounding boxes around the identified objects
+
+We start this process with smaller window size then repeat it by increasing the window size.
+
+#### Disadvantage: Computational Cost
+you're cropping out so many different square regions in the image and running each of them independently through a ConvNet
+
+One of the disadvantages of sliding window approach is its high computational cost.
+
+- **Multiple Crop Operations**: The technique involves cropping numerous overlapping regions from the image. Each cropped image is treated as an independent input to the classifier
+- **Redundant Computations**: Since many of the cropped windows may contain similar or overlapping content, the classifier processes redundant information multiple times.
 <br>
