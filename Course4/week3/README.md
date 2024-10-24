@@ -65,7 +65,7 @@ where,
 ||Example 1|Example 2|
 |--|--|--|
 |Image|<img  src="./assets/object_localization_ex1.png">|<img  src="./assets/object_localization_ex2.png">|
-|Target Label $y$|$$y = \begin{bmatrix}1 \\b_x \\b_y \\b_h \\b_w \\0 \\1 \\0\end{bmatrix}$$|$$y = \begin{bmatrix}0 \\? \\? \\? \\? \\? \\? \\?\end{bmatrix}$$ where `?` : "don't care"|
+|Target Label $y$|$$y = [1 \\ b_x \\ b_y \\ b_h \\ b_w \\ 0 \\ 1 \\ 0]$$ | $$y = [0 \\ ? \\ ? \\ ? \\ ? \\ ? \\ ? \\ ? ]$$ <br> where `?` : "Don't care"|
 
 ##### Loss Function
 $$L(\hat y, y) = (\hat y_1 - y_1)^2 + (\hat y_2 - y_2)^2 + \dots + (\hat y_8 - y_8)^2\text{, if } y_1 = 1$$
@@ -80,7 +80,7 @@ $$L(\hat y, y) = (\hat y_1 - y_1)^2\text{, if } y_1 = 0$$
 
 - Output:  $(l_x, l_y)$ coordinates 
 
-**Definition**: Landmark detection refers to the process of identifying specific points of interests (landmarks) in an image. For example, in facial recognition, landmarks might include the corners of the eyes, the tip of the nose, the corners of the mouth.
+**Definition**: Landmark detection refers to the process of identifying specific points of interests (landmarks) in an image. For example, in facial recognition, landmarks might include the corners of the eyes, the tip of the nose, and the corners of the mouth.
 
 
 **Purpose**: The main objective is to establish the potition and orientation of an object within a scene. This is essential for tasks that require obejct recognition, tracking, and alignement.
@@ -94,16 +94,16 @@ $$L(\hat y, y) = (\hat y_1 - y_1)^2\text{, if } y_1 = 0$$
 Sliding windows detection is a technique used in object detection where a fixed-size window moves across the image to identify objects.
 
 1. **Window initialization**: A square or rectangular window of a specific size is defined
-2. **Sliding the window**: The window is moved across the image in a systematic manner, staring from the upper-left corner, typecally both horizontally and vertically
+2. **Sliding the window**: The window is moved across the image in a systematic manner, staring from the upper-left corner, typically both horizontally and vertically
 3. **Classification**: At each position, the content within the window is extracted and passed through a classifier (ConvNet) to determine if an object is present and, if so, what type it is
 4. **Output**: The locations of detected objects are recorded, with bounding boxes around the identified objects
 
-We start this process with smaller window size then repeat it by increasing the window size.
+We start this process with a smaller window size and then repeat it by increasing the window size.
 
 #### Disadvantage: Computational Cost
 you're cropping out so many different square regions in the image and running each of them independently through a ConvNet
 
-One of the disadvantages of sliding window approach is its high computational cost.
+One of the disadvantages of the sliding window approach is its high computational cost.
 
 - **Multiple Crop Operations**: The technique involves cropping numerous overlapping regions from the image. Each cropped image is treated as an independent input to the classifier
 - **Redundant Computations**: Since many of the cropped windows may contain similar or overlapping content, the classifier processes redundant information multiple times.
