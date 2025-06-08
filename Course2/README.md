@@ -4,13 +4,13 @@ In course 2 on the practical aspects of deep learning, you'll learn how to make 
 
 ### Table of Contents
 
-  - [week1 - Practical Aspects of Deep Learning](https://github.com/jmcheon/deep_learning_specialization/tree/main/Course2/week1)
-  - [week2 - Optimization Algorithms](https://github.com/jmcheon/deep_learning_specialization/tree/main/Course2/week2)
-  - [week3 - Hyperparameter Tuning, Batch Normalization and Programming Frameworks](https://github.com/jmcheon/deep_learning_specialization/tree/main/Course2/week3)
+  - [Module1 - Practical Aspects of Deep Learning](https://github.com/jmcheon/deep_learning_specialization/tree/main/Course2/Module1)
+  - [Module2 - Optimization Algorithms](https://github.com/jmcheon/deep_learning_specialization/tree/main/Course2/Module2)
+  - [Module3 - Hyperparameter Tuning, Batch Normalization and Programming Frameworks](https://github.com/jmcheon/deep_learning_specialization/tree/main/Course2/Module3)
 <br/>
 
 
-## week1 - Practical Aspects of Deep Learning
+## Module1 - Practical Aspects of Deep Learning
 Discover and experiment with a variety of different initialization methods, apply L2 regularization and dropout to avoid model overfitting, then apply gradient checking to identify errors in a fraud detection model.
 
 - Setting up your Machine Learning Application
@@ -19,12 +19,12 @@ Discover and experiment with a variety of different initialization methods, appl
 
 
 
-## week2 -  Optimization Algorithms
+## Module2 -  Optimization Algorithms
 Develop your deep learning toolbox by adding more advanced optimizations, random minibatching and learning rate decay scheduling to speed up your model.
 
 - Optimization Algorithms
 
-## week3 - Hyperparameter Tuning, Batch Normalization and Programming Frameworks
+## Module3 - Hyperparameter Tuning, Batch Normalization and Programming Frameworks
 Explore Tenserflow, a deep learning framework that allows you to build neural networks quickly and easily, then train a neural network on a Tensorflow dataset.
 
 - Hyperparameter Tuning
