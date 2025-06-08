@@ -1,5 +1,4 @@
-
-# week2 -  Optimization Algorithms
+# Module2 -  Optimization Algorithms
 ### Summary
 > Develop your deep learning toolbox by adding more advanced optimizations, random minibatching and learning rate decay scheduling to speed up your model.
 > - Learning Objectives

@@ -1,6 +1,4 @@
-
-
-# week3 - One Hidden Layer Neural Networks
+# Module3 - One Hidden Layer Neural Networks
 ### Summary
 > Build a neural network with one hidden layer using forward propagation and backpropagation.
 > - Learning Objectives

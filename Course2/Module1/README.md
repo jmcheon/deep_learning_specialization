@@ -1,5 +1,4 @@
-
-# week1 - Practical Aspects of Deep Learning
+# Module1 - Practical Aspects of Deep Learning
 ### Summary
 > Discover and experiment with a variety of different initialization methods, apply L2 regularization and dropout to avoid model overfitting, and then apply gradient checking to identify errors in a fraud detection model.
 > - Learning Objectives

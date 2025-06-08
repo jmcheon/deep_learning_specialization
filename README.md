@@ -6,11 +6,11 @@
 
 ### Table of contents
 - [Curriculum](https://github.com/jmcheon/deep_learning_specialization/wiki/Curriculum)
-  - [Course1 - Neural Networks and Deep Learning](https://github.com/jmcheon/deep_learning_specialization/tree/main/Course1) (4 weeks)
-  - [Course2 - Improving Deep Neural Networks](https://github.com/jmcheon/deep_learning_specialization/tree/main/Course2) (3 weeks)
-  - [Course3 - Structuring your Machine Learning project](https://github.com/jmcheon/deep_learning_specialization/tree/main/Course3) (2 weeks)
-  - [Course4 - Convolutional Neural Networks](https://github.com/jmcheon/deep_learning_specialization/tree/main/Course4) (4 weeks)
-  - [Course5 - Natural Language Processing](https://github.com/jmcheon/deep_learning_specialization/tree/main/Course5) (4 weeks)
+  - [Course1 - Neural Networks and Deep Learning](https://github.com/jmcheon/deep_learning_specialization/tree/main/Course1) (4 Modules)
+  - [Course2 - Improving Deep Neural Networks](https://github.com/jmcheon/deep_learning_specialization/tree/main/Course2) (3 Modules)
+  - [Course3 - Structuring your Machine Learning project](https://github.com/jmcheon/deep_learning_specialization/tree/main/Course3) (2 Modules)
+  - [Course4 - Convolutional Neural Networks](https://github.com/jmcheon/deep_learning_specialization/tree/main/Course4) (4 Modules)
+  - [Course5 - Natural Language Processing](https://github.com/jmcheon/deep_learning_specialization/tree/main/Course5) (4 Modules)
 - [Standard notations for Deep Learning](#standard-notations-for-deep-learning)
 	- [1. Neural Networks Notations](#1-neural-networks-notations) 
 	- [2. Deep Learning representations](#2-deep-learning-representations)

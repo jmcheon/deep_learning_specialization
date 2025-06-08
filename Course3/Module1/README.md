@@ -1,4 +1,4 @@
-# week1 - ML Strategy
+# Module1 - ML Strategy
 ### Summary
 > Streamline and optimize your ML production workflow by implementing strategic guidelines for goal-setting and applying human-level performance to help define key priorities.
 > - Learning Objectives
